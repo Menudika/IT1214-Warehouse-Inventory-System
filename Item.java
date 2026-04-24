@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// ----------- Item Class -----------
+
 class Item {
     private String itemId;
     private String itemName;
     private int quantity;
     private double price;
 
-    // Constructor
+    
     public Item(String itemId, String itemName, int quantity, double price) {
         this.itemId = itemId;
         this.itemName = itemName;
@@ -16,7 +16,7 @@ class Item {
         this.price = price;
     }
 
-    // Getters
+    
     public String getItemId() {
         return itemId;
     }
@@ -33,12 +33,12 @@ class Item {
         return price;
     }
 
-    // Setter
+    
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    // toString
+    
     public String toString() {
         return "ID: " + itemId +
                ", Name: " + itemName +
@@ -47,17 +47,17 @@ class Item {
     }
 }
 
-// ----------- Inventory Class -----------
+
 class Inventory {
     private ArrayList<Item> items = new ArrayList<>();
 
-    // Add item
+   
     public void addItem(Item item) {
         items.add(item);
         System.out.println("Item added successfully!");
     }
 
-    // Remove item
+    
     public void removeItem(String itemId) {
         for (Item item : items) {
             if (item.getItemId().equals(itemId)) {
@@ -69,7 +69,7 @@ class Inventory {
         System.out.println("Item not found!");
     }
 
-    // Update quantity
+    
     public void updateQuantity(String itemId, int quantity) {
         for (Item item : items) {
             if (item.getItemId().equals(itemId)) {
@@ -81,7 +81,7 @@ class Inventory {
         System.out.println("Item not found!");
     }
 
-    // Search item
+    
     public void searchItem(String keyword) {
         for (Item item : items) {
             if (item.getItemId().equals(keyword) ||
@@ -93,7 +93,7 @@ class Inventory {
         System.out.println("Item not found!");
     }
 
-    // Display all
+    
     public void displayItems() {
         if (items.isEmpty()) {
             System.out.println("Inventory is empty!");
@@ -105,7 +105,7 @@ class Inventory {
     }
 }
 
-// ----------- Main Class -----------
+
 public class Warehouse {
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
@@ -122,7 +122,7 @@ public class Warehouse {
 
             System.out.print("Enter choice: ");
 
-            // Handle invalid input
+            
             if (!sc.hasNextInt()) {
                 System.out.println("Invalid input! Enter a number.");
                 sc.next();
@@ -130,7 +130,7 @@ public class Warehouse {
             }
 
             int choice = sc.nextInt();
-            sc.nextLine(); // clear buffer
+            sc.nextLine();
 
             switch (choice) {
                 case 1:
